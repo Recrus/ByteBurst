@@ -1,5 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@mixin container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@mixin transition {
+  transition: ease-in-out 250ms;
+}
 
 body {
-  font-family: "Poppins", "sans-serif";
+  font-family: "Montserrat", "sans-serif";
+  color: #FFFFFF;
+}
+
+header {
+  background-image: url("../../img/wall.jpg");
+  background-size: cover;
+}
+
+.header__wrapper {
+  height: 100vh;
+  max-height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include container;
+}
+
+nav {
+}
+
+.nav__top {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+
+  a {
+    color: white;
+    @include transition;
+
+    &:hover {
+      color: #002EFF;
+    }
+  }
+}
+
+.nav__top__menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav__top__contact {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.slogan {
+  padding: 2rem;
+  max-width: 600px;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 48px;
 }
