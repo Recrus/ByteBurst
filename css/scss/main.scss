@@ -4,6 +4,8 @@ $font-primary: "Montserrat", "sans-serif";
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-hover: #002EFF;
+$font-weight-bold: 600;
+$divider-color: black;
 $transition-duration: 250ms;
 
 @mixin container {
@@ -21,6 +23,12 @@ $transition-duration: 250ms;
   &:hover {
     color: $color;
   }
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -80,7 +88,7 @@ header {
     &-text {}
   }
 
-  &__diver {
+  &__divider {
     height: 4px;
     border: none;
     background-color: #fff;
@@ -120,7 +128,7 @@ main {
   }
 
   &__divider {
-    background-color: $color-black;
+    background-color: $divider-color;
     height: 4px;
     border: none;
   }
@@ -214,5 +222,153 @@ main {
     font-weight: 600;
     line-height: 36px;
     @include hoverTransition($color-black);
+  }
+}
+
+.slider {
+  overflow: hidden;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  margin-bottom: 2rem;
+  padding-bottom: 5%;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+
+  &__content {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-content: space-around;
+    padding: 6rem;
+
+    h2 {
+      max-width: 24rem;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: $font-weight-bold;
+      line-height: 32px;
+
+      span {
+        font-size: 32px;
+        line-height: 36px;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.slide-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1400px;
+  background-color: $color-white;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 33.33%;
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+
+  &__client {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    padding: 2rem;
+  }
+
+  &__client-name {
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+    line-height: 28px;
+  }
+
+  &__client-link {
+    color: $color-black;
+    font-size: 82px;
+    font-weight: $font-weight-bold;
+    letter-spacing: 6.613px;
+    text-transform: uppercase;
+    @include hoverTransition();
+  }
+
+  &__other-works {
+    color: $color-hover;
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    line-height: 36px;
+    @include hoverTransition($color-black);
+  }
+
+  &__divider {
+    background-color: $divider-color;
+    border: none;
+    height: 2px;
+  }
+
+  &__stats-wrapper {
+    @include flexCenter;
+    padding: 0 2rem;
+  }
+
+  &__stats {
+    @include flexCenter;
+    padding: 2rem 0;
+    min-width: 50%;
+
+    &:first-child {
+      border-right: 1px solid $color-black;
+    }
+  }
+
+  &__stats-value {
+    font-size: 42px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-right: 2rem;
+  }
+
+  &__stats-description {
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    line-height: 20px;
+    max-width: 14rem;
+  }
+}
+
+.prev-slide, .next-slide {
+  position: absolute;
+  top: 60px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+  z-index: 10;
+  padding: 5px 10px;
+  @include transition;
+}
+
+.prev-slide {
+  right: 100px;
+  transform: rotate(180deg);
+
+  &:hover {
+    transform: rotate(180deg) translateX(0.5rem);
+  }
+}
+
+.next-slide {
+  right: 10px;
+
+  &:hover {
+    transform: translateX(0.5rem);
   }
 }
