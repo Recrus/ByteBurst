@@ -1,4 +1,4 @@
-# My Landing Page Showcase
+# Byte-Burst Landing Page Showcase
 
 Welcome to my landing page project! This project is a testament to my skills in HTML, SCSS, and JavaScript. It's a simple, yet elegant, demonstration of what I can craft using only these technologies.
 
