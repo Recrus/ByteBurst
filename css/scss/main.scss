@@ -1,28 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@400&family=Roboto:wght@400&display=swap');
 
-$font-primary: "Montserrat", "sans-serif";
-$color-white: #FFFFFF;
-$color-black: #000000;
-$color-hover: #002EFF;
-$font-weight-bold: 600;
-$divider-color: black;
-$transition-duration: 250ms;
+//Variables
+$color-primary: #002EFF;
+$color-secondary: #FFFFFF;
+$color-tertiary: #000000;
+$divider-color-primary: black;
+$divider-color-secondary: white;
 
+$font-primary: "Montserrat", "sans-serif";
+$font-weight-light: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+
+$transition-ease: 250ms ease-in-out;
+
+// Mixins
 @mixin container {
   max-width: 1400px;
   margin: 0 auto;
-}
-
-@mixin transition($property: all) {
-  transition: $property ease-in-out $transition-duration;
-}
-
-@mixin hoverTransition($color: $color-hover) {
-  @include transition;
-
-  &:hover {
-    color: $color;
-  }
 }
 
 @mixin flexCenter {
@@ -31,15 +26,35 @@ $transition-duration: 250ms;
   align-items: center;
 }
 
-body {
-  font-family: $font-primary;
-  color: $color-black;
+@mixin divider($height: 4px, $bgc: $divider-color-primary) {
+  height: $height;
+  border: none;
+  background-color: $bgc;
 }
 
+@mixin transition($property: all, $speed: $transition-ease) {
+  transition: $property $speed;
+}
+
+@mixin hoverTransition($property: all, $color: $color-primary) {
+  transition: $property $transition-ease;
+
+  &:hover {
+    color: $color;
+  }
+}
+
+// Base Styles
+body {
+  font-family: $font-primary;
+  color: $color-tertiary;
+}
+
+// Header Styles
 header {
   background-image: url("../../img/wall.jpg");
   background-size: cover;
-  color: $color-white;
+  color: $color-secondary;
 }
 
 .header__wrapper {
@@ -65,11 +80,11 @@ header {
   }
 
   &__link {
-    color: $color-white;
+    color: $color-secondary;
     @include hoverTransition;
 
     &--vertical-line {
-      border-left: 1px solid $color-white;
+      border-left: 1px solid $color-secondary;
       padding-left: 1rem;
       margin-left: 1rem;
     }
@@ -89,9 +104,7 @@ header {
   }
 
   &__divider {
-    height: 4px;
-    border: none;
-    background-color: #fff;
+    @include divider(4px, $divider-color-secondary);
   }
 }
 
@@ -99,27 +112,29 @@ header {
   padding: 2rem;
   max-width: 600px;
   font-size: 42px;
-  font-weight: 600;
+  font-weight: $font-weight-bold;
   line-height: 48px;
 }
 
+//Main styles
 main {
   @include container;
 }
 
-
+//Studio styles
 .studio-block {
   padding: 2rem;
+  margin-bottom: 4rem;
 
   &__cta-links {
     margin-bottom: 2rem;
 
     a {
-      color: $color-black;
+      color: $color-tertiary;
       font-size: 20px;
-      font-weight: 600;
+      font-weight: $font-weight-bold;
       line-height: 28px;
-      @include hoverTransition;
+      @include hoverTransition();
 
       &:first-child {
         margin-right: 1rem;
@@ -128,9 +143,7 @@ main {
   }
 
   &__divider {
-    background-color: $divider-color;
-    height: 4px;
-    border: none;
+    @include divider(4px, $divider-color-primary);
   }
 
   &__wrapper {
@@ -152,16 +165,16 @@ main {
   &__title {
     max-width: 22rem;
     font-size: 32px;
-    font-weight: 600;
+    font-weight: $font-weight-bold;
     line-height: 40px;
   }
 
   &__link {
-    color: $color-hover;
+    color: $color-primary;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: $font-weight-bold;
     line-height: 36px;
-    @include hoverTransition($color-black);
+    @include hoverTransition(all, $color-tertiary);
   }
 
   &__image {
@@ -169,9 +182,9 @@ main {
     width: 8rem;
 
     &:hover {
-      -webkit-animation: horizontal-shaking $transition-duration;
-      -o-animation: horizontal-shaking $transition-duration;
-      animation: horizontal-shaking $transition-duration;
+      -webkit-animation: horizontal-shaking $transition-ease;
+      -o-animation: horizontal-shaking $transition-ease;
+      animation: horizontal-shaking $transition-ease;
     }
   }
 }
@@ -192,12 +205,12 @@ main {
   min-width: 50%;
 
   &--vertical-line {
-    border-left: 1px solid $color-black;
+    border-left: 1px solid $color-tertiary;
   }
 
   &__list {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: $font-weight-bold;
     line-height: 28px;
   }
 
@@ -212,31 +225,32 @@ main {
   &__description {
     max-width: 30rem;
     font-size: 32px;
-    font-weight: 600;
+    font-weight: $font-weight-bold;
     line-height: 40px;
   }
 
   &__cta-link {
-    color: $color-hover;
+    color: $color-primary;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: $font-weight-bold;
     line-height: 36px;
-    @include hoverTransition($color-black);
+    @include hoverTransition(all, $color-tertiary);
   }
 }
 
-.slider {
+//Cases styles
+.case-slider {
   overflow: hidden;
   width: 100vw;
   position: relative;
   left: calc(-50vw + 50%);
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   padding-bottom: 5%;
 }
 
-.slider-wrapper {
+.case-slider__wrapper {
   display: flex;
-  transition: transform 0.5s ease;
+  @include transition(transform, 500ms ease);
 }
 
 .slide {
@@ -272,7 +286,7 @@ main {
   transform: translateX(-50%);
   width: 90%;
   max-width: 1400px;
-  background-color: $color-white;
+  background-color: $color-secondary;
   margin: 0 auto;
   box-sizing: border-box;
   height: 33.33%;
@@ -283,6 +297,8 @@ main {
     justify-content: space-around;
     align-items: start;
     padding: 2rem;
+    opacity: 1;
+    @include transition(opacity, 300ms ease-out);
   }
 
   &__client-name {
@@ -292,31 +308,34 @@ main {
   }
 
   &__client-link {
-    color: $color-black;
+    color: $color-tertiary;
     font-size: 82px;
     font-weight: $font-weight-bold;
     letter-spacing: 6.613px;
     text-transform: uppercase;
+    min-width: 50%;
+    margin: 0 auto;
+    text-align: center;
     @include hoverTransition();
   }
 
   &__other-works {
-    color: $color-hover;
+    color: $color-primary;
     font-size: 14px;
     font-weight: $font-weight-bold;
     line-height: 36px;
-    @include hoverTransition($color-black);
+    @include hoverTransition(all, $color-tertiary);
   }
 
   &__divider {
-    background-color: $divider-color;
-    border: none;
-    height: 2px;
+    @include divider(2px, $divider-color-primary);
   }
 
   &__stats-wrapper {
     @include flexCenter;
     padding: 0 2rem;
+    opacity: 1;
+    @include transition(opacity, 300ms ease-out);
   }
 
   &__stats {
@@ -325,13 +344,13 @@ main {
     min-width: 50%;
 
     &:first-child {
-      border-right: 1px solid $color-black;
+      border-right: 1px solid $color-tertiary;
     }
   }
 
   &__stats-value {
     font-size: 42px;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
     text-transform: uppercase;
     margin-right: 2rem;
   }
@@ -342,6 +361,136 @@ main {
     line-height: 20px;
     max-width: 14rem;
   }
+}
+
+//News styles
+.news-slider {
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  background-color: #000;
+  color: $color-secondary;
+  margin-bottom: 4rem;
+
+  &__wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+    line-height: 40px;
+    min-width: 50%;
+    max-width: 20rem;
+  }
+
+  &__viewport {
+    overflow: hidden;
+    padding: 2rem 0;
+    width: 100%;
+  }
+
+  &__items {
+    display: flex;
+    gap: 2rem;
+    width: 200%;
+    @include transition(transform, 500ms ease);
+  }
+
+  &__item {
+    width: 50%;
+    display: flex;
+    gap: 4rem;
+    box-sizing: border-box;
+
+    &-image {
+      min-width: 50%;
+      background-color: #fff;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: $font-weight-bold;
+      line-height: 28px;
+      padding: 1rem 0;
+    }
+
+    &-link {
+      color: $color-secondary;
+      font-size: 14px;
+      font-weight: $font-weight-bold;
+      line-height: 20px;
+      @include hoverTransition();
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &-avatar {
+      border-radius: 100%;
+      background-color: #fff;
+      height: 50px;
+      width: 50px;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    &-name {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: $font-weight-bold;
+    }
+
+    &-views {
+      color: $color-primary;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      img {
+        height: 1rem;
+      }
+    }
+  }
+
+  &__show-all {
+    width: fit-content;
+    color: $color-secondary;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: $font-weight-bold;
+    line-height: 36px;
+    @include hoverTransition();
+  }
+}
+
+//Utility styles
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
 }
 
 .prev-slide, .next-slide {
