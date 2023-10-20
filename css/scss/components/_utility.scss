@@ -1,0 +1,40 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+//Utility styles
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.prev-slide, .next-slide {
+  position: absolute;
+  top: 60px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+  z-index: 10;
+  padding: 5px 10px;
+  @include transition;
+}
+
+.prev-slide {
+  right: 100px;
+  transform: rotate(180deg);
+
+  &:hover {
+    transform: rotate(180deg) translateX(0.5rem);
+  }
+}
+
+.next-slide {
+  right: 10px;
+
+  &:hover {
+    transform: translateX(0.5rem);
+  }
+}

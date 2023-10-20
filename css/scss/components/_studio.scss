@@ -1,0 +1,147 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+//Studio styles
+.studio-block {
+  padding: $padding;
+  margin-bottom: $block-margin-bottom;
+
+  @media (max-width: $screen-sm) {
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__cta-links {
+    margin-bottom: 2rem;
+
+    @media (max-width: $screen-sm) {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: $color-tertiary;
+      @include boldText($font-size-medium);
+      @include hoverTransition();
+
+      &:first-child {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__divider {
+    @include divider(4px, $divider-color-primary);
+  }
+
+  &__wrapper {
+    display: flex;
+
+    article {
+      min-height: 36rem;
+
+      @media (max-width: $screen-sm) {
+        min-height: 20rem;
+      }
+    }
+
+    @media (max-width: $screen-sm) {
+      flex-direction: column;
+    }
+  }
+}
+
+.studio-info {
+  padding: 2rem 2rem 2rem 0;
+  @include flexColumnSpaceB;
+  min-width: 50%;
+
+  &__title {
+    max-width: 22rem;
+    @include boldText($font-size-big);
+    margin-bottom: 1rem;
+
+    @media (max-width: $screen-sm) {
+      @include boldText($font-size-medium);
+    }
+  }
+
+  &__link {
+    color: $color-primary;
+    @include boldText($font-size-small);
+    @include hoverTransition(all, $color-tertiary);
+  }
+
+  &__image {
+    align-self: end;
+    width: 8rem;
+
+    &:hover {
+      -webkit-animation: horizontal-shaking $transition-ease;
+      -o-animation: horizontal-shaking $transition-ease;
+      animation: horizontal-shaking $transition-ease;
+    }
+  }
+}
+
+@keyframes horizontal-shaking {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(1px) }
+  50% { transform: translateX(-1px) }
+  75% { transform: translateX(1px) }
+  100% { transform: translateX(0) }
+}
+
+.services {
+  padding: 2rem 0 2rem 2rem;
+  @include flexColumnSpaceB;
+  min-width: 50%;
+
+  @media (max-width: $screen-sm) {
+    padding: 2rem 0;
+  }
+
+  &--vertical-line {
+    border-left: 1px solid $color-tertiary;
+
+    @media (max-width: $screen-sm) {
+      border-top: 1px solid $color-tertiary;
+      border-left: none;
+    }
+  }
+
+  &__list {
+    @include boldText($font-size-medium);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    @media (max-width: $screen-sm) {
+      @include boldText($font-size-small);
+    }
+  }
+
+  &__item {
+    @include transition;
+
+    &:hover {
+      transform: translateX(0.5rem);
+    }
+  }
+
+  &__description {
+    max-width: 30rem;
+    @include boldText($font-size-big);
+
+    @media (max-width: $screen-md) {
+      @include boldText($font-size-medium);
+      margin-top: 2rem;
+    }
+  }
+
+  &__cta-link {
+    color: $color-primary;
+    @include boldText($font-size-small);
+    @include hoverTransition(all, $color-tertiary);
+  }
+}

@@ -1,4 +1,4 @@
-# My Landing Page Showcase
+# Byte-Burst Landing Page Showcase
 
 Welcome to my landing page project! This project is a testament to my skills in HTML, SCSS, and JavaScript. It's a simple, yet elegant, demonstration of what I can craft using only these technologies.
 
@@ -6,7 +6,7 @@ Welcome to my landing page project! This project is a testament to my skills in 
 - **Responsive Design:** The landing page is optimized for all screen sizes.
 - **Clean SCSS:** I've structured the SCSS to be modular and easy to maintain.
 - **Interactive Elements:** Using vanilla JavaScript, the landing page has some interactive elements to keep users engaged.
-
+- **BEM Methodology:** The CSS naming convention follows the BEM (Block, Element, Modifier) methodology, ensuring a scalable and maintainable codebase.
 ## Getting Started
 
 ### Prerequisites

@@ -1,0 +1,63 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+.footer {
+  @include container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  color: $color-tertiary;
+  font-weight: $font-weight-bold;
+
+  @media (max-width: $screen-lg) {
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  @media (max-width: $screen-md) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__brand, &__socials, &__contact {
+    display: flex;
+    align-items: center;
+    gap: $items-gap;
+  }
+
+  &__socials {
+    gap: 0;
+  }
+
+  &__logo {
+    width: 2rem;
+  }
+
+  &__address {
+    max-width: 8rem;
+
+    @media (max-width: $screen-md) {
+      max-width: 100%;
+    }
+  }
+
+  &__socials-list {
+    display: flex;
+    gap: $items-gap;
+  }
+
+  &__socials-item, &__phone {
+    border-left: $footer-border-style;
+    padding-left: $items-gap;
+    color: $color-tertiary;
+
+    &:first-child {
+      border: none;
+    }
+  }
+
+  &__socials-link, &__email, &__phone {
+    color: $color-tertiary;
+    @include hoverTransition();
+  }
+}

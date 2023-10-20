@@ -1,0 +1,47 @@
+@import "../utilities/variables";
+
+// Mixins
+@mixin container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexSpaceB {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flexColumnSpaceB {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@mixin boldText($size) {
+  font-size: $size;
+  font-weight: $font-weight-bold;
+}
+
+@mixin divider($height: 4px, $bgc: $divider-color-primary) {
+  height: $height;
+  border: none;
+  background-color: $bgc;
+}
+
+@mixin transition($property: all, $speed: $transition-ease) {
+  transition: $property $speed;
+}
+
+@mixin hoverTransition($property: all, $color: $color-primary) {
+  transition: $property $transition-ease;
+
+  &:hover {
+    color: $color;
+  }
+}

@@ -1,0 +1,89 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+.contact-block {
+  margin-bottom: $block-margin-bottom;
+
+  @media (max-width: $screen-md) {
+    margin-bottom: 2rem;
+  }
+
+  &__divider {
+    @include divider(4px, $divider-color-tertiary);
+  }
+
+  &__content {
+    @include flexSpaceB;
+    height: 24rem;
+
+    @media (max-width: $screen-md) {
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  &__description {
+    @include flexSpaceB;
+    padding: 2rem 1rem;
+    border-right: 1px solid $color-primary;
+    min-width: 50%;
+
+    @media (max-width: $screen-md) {
+      border-right: none;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    @include boldText($font-size-big);
+    max-width: 20rem;
+  }
+
+  &__links {
+    @include flexColumnSpaceB;
+    width: fit-content;
+
+    @media (max-width: $screen-md) {
+      margin-top: 1rem;
+    }
+  }
+
+  &__link {
+    color: $color-primary;
+    @include boldText($font-size-medium);
+
+    &--email,
+    &--telegram {
+      @include hoverTransition(color, $color-tertiary);
+    }
+
+    &--telegram {
+      padding-bottom: 4rem;
+
+      @media (max-width: $screen-md) {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__brief {
+    align-items: start;
+    background-color: $color-primary;
+    color: $color-secondary;
+    max-width: 16rem;
+    padding: $padding;
+    @include boldText($font-size-big);
+    @include transition();
+
+    &:hover {
+      background-color: transparent;
+      color: $color-primary;
+    }
+
+    @media (max-width: $screen-md) {
+      margin-top: 2rem;
+      max-width: none;
+      text-align: center;
+    }
+  }
+}

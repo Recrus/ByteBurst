@@ -7,43 +7,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="apple-touch-icon" href="icon.png" />
-    <!-- Place favicon.ico in the root directory -->
+    <link rel="icon" type="image/x-icon" href="/img/logoW.svg">
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/scss/main.css" />
-    <link rel="stylesheet" href="css/scss/nullable.css" />
-
-<!--    <meta name="theme-color" content="#fafafa" />-->
-<!--    todo replace-->
   </head>
 
   <body>
     <header>
       <div class="header__wrapper">
-        <nav>
+        <nav class="nav">
           <div class="nav__top">
-            <div class="nav__top__menu">
-              <a href="#">Услуги</a>
-              <a href="#">Портфолио</a>
+            <div class="nav__menu">
+              <a href="#" class="nav__link">Услуги</a>
+              <a href="#" class="nav__link nav__link--vertical-line">Портфолио</a>
             </div>
-            <div class="nav__top__contact">
-              <a href="#">Контакты</a>
-              <a href="tel:+76031112298">+7(603) 111-22-98</a>
+            <div class="nav__contact">
+              <a href="#" class="nav__link">Контакты</a>
+              <a href="tel:+76031112298" class="nav__link nav__link--vertical-line">+7(603) 111-22-98</a>
             </div>
           </div>
-          <hr>
+          <hr class="nav__divider">
           <div class="nav__logo">
-            <img src="img/logoW.svg" alt="#">
-            <p>BYTE-BURST</p>
+            <img src="img/logoW.svg" alt="#" class="nav__logo-img">
+            <p class="nav__logo-text">BYTE-BURST</p>
           </div>
         </nav>
-        <h1 class="slogan">
-          Делаем веб, ведем рекламные компании, помогаем с интерактивом
+        <h1 class="header__slogan">
+        Делаем веб, ведем рекламные компании, помогаем с интерактивом
         </h1>
       </div>
     </header>
-    <main></main>
-    <footer></footer>
+    <main>
+      <div class="studio-block">
+        <div class="studio-block__cta-links">
+          <a href="#">заполнить бриф</a>
+          <a href="#">связаться с нами</a>
+        </div>
+        <hr class="studio-block__divider">
+
+        <div class="studio-block__wrapper">
+          <article class="studio-info">
+            <div class="studio-info__wrapper">
+              <h2 class="studio-info__title">Мы бутиковая студия разработки и продвижения</h2>
+              <a href="#" class="studio-info__link">о студии</a>
+            </div>
+            <img src="./img/burst.svg" alt="#" class="studio-info__image">
+          </article>
+
+          <article class="services services--vertical-line">
+            <div class="services__wrapper">
+              <ul class="services__list">
+                <li class="services__item">Аналитика и стратегия</li>
+                <li class="services__item">Дизайн и разработка</li>
+                <li class="services__item">Продвижение и реклама</li>
+                <li class="services__item">Автоворонки и автоматизация</li>
+                <li class="services__item">Продажи</li>
+              </ul>
+              <a href="#" class="services__cta-link">все услуги</a>
+            </div>
+            <h2 class="services__description">К нам приходят, когда нужно сделать сайт вчера, настроить контекстную рекламу или когда хотят начать продажи на различных площадках</h2>
+          </article>
+        </div>
+
+        <hr class="studio-block__divider">
+      </div>
+      <div class="case-slider">
+        <div class="case-slider__wrapper"></div>
+        <div class="slide-text"></div>
+          <button class="case-slider__wrapper-prev prev-slide">
+            <img src="./img/arrowR.svg" alt="#">
+          </button>
+          <button class="case-slider__wrapper-next next-slide">
+            <img src="./img/arrowR.svg" alt="#">
+          </button>
+      </div>
+      <div class="news-slider">
+        <div class="news-slider__wrapper">
+            <h1 class="news-slider__title">
+              Разбираемся в трендах, продвижении и тестировании, советуем, информируем, пишем
+            </h1>
+          <div class="news-slider__viewport">
+            <div class="news-slider__items"></div>
+          </div>
+          <a href="#" class="news-slider__show-all">Другие статьи</a>
+          <button class="prev-slide news-slider__items-prev">
+            <img src="./img/arrowRW.svg" alt="Previous Slide">
+          </button>
+          <button class="next-slide news-slider__items-next">
+            <img src="./img/arrowRW.svg" alt="Next Slide">
+          </button>
+        </div>
+      </div>
+      <div class="contact-block">
+        <hr class="contact-block__divider">
+
+        <div class="contact-block__content">
+          <div class="contact-block__description">
+            <h1 class="contact-block__title">Расскажите нам о своем проекте, задаче, идее, сроках, а мы составим предложение</h1>
+            <div class="contact-block__links">
+              <a href="#" class="contact-block__link contact-block__link--email">project@bb.ru</a>
+              <a href="#" class="contact-block__link contact-block__link--telegram">telegram</a>
+            </div>
+          </div>
+          <a href="#" class="contact-block__brief">Заполнить бриф</a>
+        </div>
+
+        <hr class="contact-block__divider">
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__brand">
+        <img class="footer__logo" src="./img/logoB.svg" alt="Company Logo">
+        <p class="footer__years">&copy; 2012-2023</p>
+      </div>
+      <p class="footer__address">
+        Москва, Авиамоторная 25
+      </p>
+      <div class="footer__socials">
+        <p class="footer__socials-title">Мы в соцсетях:</p>
+        <ul class="footer__socials-list">
+          <li class="footer__socials-item">
+            <a href="#" class="footer__socials-link footer__socials-link--vk">vk</a>
+          </li>
+          <li class="footer__socials-item">
+            <a href="#" class="footer__socials-link footer__socials-link--fb">fb</a>
+          </li>
+          <li class="footer__socials-item">
+            <a href="#" class="footer__socials-link footer__socials-link--in">in</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <p class="footer__email">hello@bb.ru</p>
+        <a href="tel:+76031112298" class="footer__phone">+7(603) 111-22-98</a>
+      </div>
+    </footer>
+
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
