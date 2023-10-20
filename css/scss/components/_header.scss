@@ -2,26 +2,24 @@
 @import "../utilities/mixins";
 
 // Header Styles
+
+// Header Wrapper
 .header__wrapper {
   height: 100vh;
   max-height: 1000px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include flexColumnSpaceB;
+
   @include container;
 }
 
+// Navigation Styles
 .nav {
   &__top {
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem;
+    padding: $padding;
   }
 
-  &__menu,
-  &__contact,
-  &__logo {
-    display: flex;
+  &__top, &__menu, &__contact, &__logo {
+    @include flexSpaceB;
   }
 
   &__link {
@@ -36,16 +34,15 @@
   }
 
   &__logo {
+    justify-content: initial;
     align-items: center;
-    gap: 1rem;
-    padding: 2rem;
+    gap: $items-gap;
+    padding: $padding;
 
     &-img {
       width: 40px;
       height: 40px;
     }
-
-    &-text {}
   }
 
   &__divider {
@@ -53,10 +50,11 @@
   }
 }
 
+// Header Slogan Styles
 .header__slogan {
-  padding: 2rem;
+  padding: $padding;
   max-width: 600px;
-  font-size: 42px;
+  font-size: $font-size-huge;
   font-weight: $font-weight-bold;
-  line-height: 48px;
 }
+

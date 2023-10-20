@@ -12,6 +12,17 @@
   align-items: center;
 }
 
+@mixin flexSpaceB {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flexColumnSpaceB {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 @mixin divider($height: 4px, $bgc: $divider-color-primary) {
   height: $height;
   border: none;

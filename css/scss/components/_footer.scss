@@ -7,14 +7,17 @@
   align-items: center;
   padding-bottom: 2rem;
   color: #000;
-  font-size: 16px;
   font-weight: $font-weight-bold;
   @include container;
 
   &__brand, &__socials, &__contact {
     display: flex;
     align-items: center;
-    gap: $footer-gap;
+    gap: $items-gap;
+  }
+
+  &__socials {
+    gap: 0;
   }
 
   &__logo {
@@ -27,12 +30,12 @@
 
   &__socials-list {
     display: flex;
-    gap: $footer-gap;
+    gap: $items-gap;
   }
 
   &__socials-item, &__phone {
     border-left: $footer-border-style;
-    padding-left: $footer-gap;
+    padding-left: $items-gap;;
     color: $color-tertiary;
 
     &:first-child {

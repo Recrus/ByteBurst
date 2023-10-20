@@ -1,4 +1,6 @@
 //Variables
+
+//colors
 $color-primary: #002EFF;
 $color-secondary: #FFFFFF;
 $color-tertiary: #000000;
@@ -6,12 +8,20 @@ $divider-color-primary: black;
 $divider-color-secondary: white;
 $divider-color-tertiary: #002EFF;
 
+//font
 $font-primary: "Montserrat", "sans-serif";
+$font-size-huge: 42px;
+$font-size-big: 32px;
+$font-size-medium: 20px;
+$font-size-small: 14px;
 $font-weight-light: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 600;
 
-$footer-gap: 1rem;
+//paddings, margins and gaps
+$padding: 2rem;
+$block-margin-bottom: 4rem;
+$items-gap: 1rem;
 $footer-border-style: 2px solid $color-tertiary;
 
 $transition-ease: 250ms ease-in-out;

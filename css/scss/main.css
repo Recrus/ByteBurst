@@ -139,12 +139,11 @@ input:-webkit-autofill:active {
 }
 
 .nav__top {
-  display: flex;
-  justify-content: space-between;
   padding: 2rem;
 }
-.nav__menu, .nav__contact, .nav__logo {
+.nav__top, .nav__menu, .nav__contact, .nav__logo {
   display: flex;
+  justify-content: space-between;
 }
 .nav__link {
   color: #FFFFFF;
@@ -159,6 +158,7 @@ input:-webkit-autofill:active {
   margin-left: 1rem;
 }
 .nav__logo {
+  justify-content: initial;
   align-items: center;
   gap: 1rem;
   padding: 2rem;
@@ -178,7 +178,6 @@ input:-webkit-autofill:active {
   max-width: 600px;
   font-size: 42px;
   font-weight: 600;
-  line-height: 48px;
 }
 
 .studio-block {
@@ -192,7 +191,6 @@ input:-webkit-autofill:active {
   color: #000000;
   font-size: 20px;
   font-weight: 600;
-  line-height: 28px;
   transition: all 250ms ease-in-out;
 }
 .studio-block__cta-links a:hover {
@@ -224,13 +222,12 @@ input:-webkit-autofill:active {
   max-width: 22rem;
   font-size: 32px;
   font-weight: 600;
-  line-height: 40px;
+  margin-bottom: 1rem;
 }
 .studio-info__link {
   color: #002EFF;
   font-size: 14px;
   font-weight: 600;
-  line-height: 36px;
   transition: all 250ms ease-in-out;
 }
 .studio-info__link:hover {
@@ -276,7 +273,10 @@ input:-webkit-autofill:active {
 .services__list {
   font-size: 20px;
   font-weight: 600;
-  line-height: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 .services__item {
   transition: all 250ms ease-in-out;
@@ -288,13 +288,11 @@ input:-webkit-autofill:active {
   max-width: 30rem;
   font-size: 32px;
   font-weight: 600;
-  line-height: 40px;
 }
 .services__cta-link {
   color: #002EFF;
   font-size: 14px;
   font-weight: 600;
-  line-height: 36px;
   transition: all 250ms ease-in-out;
 }
 .services__cta-link:hover {
@@ -327,15 +325,13 @@ input:-webkit-autofill:active {
 }
 .slide__content h2 {
   max-width: 24rem;
-  font-size: 24px;
-  font-style: normal;
+  font-size: 32px;
   font-weight: 600;
-  line-height: 32px;
 }
 .slide__content h2 span {
   font-size: 32px;
-  line-height: 36px;
   text-decoration: underline;
+  line-height: 6rem;
 }
 
 .slide-text {
@@ -362,7 +358,6 @@ input:-webkit-autofill:active {
 .slide-text__client-name {
   font-size: 20px;
   font-weight: 600;
-  line-height: 28px;
 }
 .slide-text__client-link {
   color: #000000;
@@ -382,7 +377,6 @@ input:-webkit-autofill:active {
   color: #002EFF;
   font-size: 14px;
   font-weight: 600;
-  line-height: 36px;
   transition: all 250ms ease-in-out;
 }
 .slide-text__other-works:hover {
@@ -420,7 +414,6 @@ input:-webkit-autofill:active {
 .slide-text__stats-description {
   font-size: 14px;
   font-weight: 600;
-  line-height: 20px;
   max-width: 14rem;
 }
 
@@ -443,9 +436,7 @@ input:-webkit-autofill:active {
 .news-slider__title {
   font-size: 32px;
   font-weight: 600;
-  line-height: 40px;
-  min-width: 50%;
-  max-width: 20rem;
+  max-width: 40%;
 }
 .news-slider__viewport {
   overflow: hidden;
@@ -454,14 +445,14 @@ input:-webkit-autofill:active {
 }
 .news-slider__items {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   width: 200%;
   transition: transform 500ms ease;
 }
 .news-slider__item {
   width: 50%;
   display: flex;
-  gap: 4rem;
+  gap: 1rem;
   box-sizing: border-box;
 }
 .news-slider__item-image {
@@ -477,14 +468,12 @@ input:-webkit-autofill:active {
 .news-slider__item-title {
   font-size: 20px;
   font-weight: 600;
-  line-height: 28px;
   padding: 1rem 0;
 }
 .news-slider__item-link {
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 600;
-  line-height: 20px;
   transition: all 250ms ease-in-out;
 }
 .news-slider__item-link:hover {
@@ -527,7 +516,6 @@ input:-webkit-autofill:active {
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
-  line-height: 36px;
   transition: all 250ms ease-in-out;
 }
 .news-slider__show-all:hover {
@@ -585,9 +573,8 @@ input:-webkit-autofill:active {
 .contact-block__brief {
   background-color: #002EFF;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem;
+  align-items: start;
+  padding: 2rem;
   max-width: 16rem;
   color: #FFFFFF;
   font-size: 32px;
@@ -605,7 +592,6 @@ input:-webkit-autofill:active {
   align-items: center;
   padding-bottom: 2rem;
   color: #000;
-  font-size: 16px;
   font-weight: 600;
   max-width: 1400px;
   margin: 0 auto;
@@ -614,6 +600,9 @@ input:-webkit-autofill:active {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+.footer__socials {
+  gap: 0;
 }
 .footer__logo {
   width: 2rem;
