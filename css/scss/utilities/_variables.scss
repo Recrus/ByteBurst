@@ -24,4 +24,12 @@ $block-margin-bottom: 4rem;
 $items-gap: 1rem;
 $footer-border-style: 2px solid $color-tertiary;
 
+//transition
 $transition-ease: 250ms ease-in-out;
+
+//media queries
+$screen-xsm: 375px;
+$screen-sm: 425px;
+$screen-md: 768px;
+$screen-lg: 1024px;
+$screen-xl: 1440px;

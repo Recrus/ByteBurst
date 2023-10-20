@@ -23,6 +23,11 @@
   justify-content: space-between;
 }
 
+@mixin boldText($size) {
+  font-size: $size;
+  font-weight: $font-weight-bold;
+}
+
 @mixin divider($height: 4px, $bgc: $divider-color-primary) {
   height: $height;
   border: none;

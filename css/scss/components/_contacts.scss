@@ -4,6 +4,10 @@
 .contact-block {
   margin-bottom: $block-margin-bottom;
 
+  @media (max-width: $screen-md) {
+    margin-bottom: 2rem;
+  }
+
   &__divider {
     @include divider(4px, $divider-color-tertiary);
   }
@@ -11,57 +15,75 @@
   &__content {
     @include flexSpaceB;
     height: 24rem;
+
+    @media (max-width: $screen-md) {
+      flex-direction: column;
+      height: 100%;
+    }
   }
 
   &__description {
     @include flexSpaceB;
-    min-width: 50%;
-    padding: 2rem 1rem 2rem 0;
+    padding: 2rem 1rem;
     border-right: 1px solid $color-primary;
+    min-width: 50%;
+
+    @media (max-width: $screen-md) {
+      border-right: none;
+      flex-direction: column;
+    }
   }
 
   &__title {
-    font-size: $font-size-big;
-    font-weight: $font-weight-bold;
+    @include boldText($font-size-big);
     max-width: 20rem;
   }
 
   &__links {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flexColumnSpaceB;
+    width: fit-content;
+
+    @media (max-width: $screen-md) {
+      margin-top: 1rem;
+    }
   }
 
   &__link {
     color: $color-primary;
-    font-size: $font-size-medium;
-    font-weight: $font-weight-bold;
+    @include boldText($font-size-medium);
 
-    &--email {
+    &--email,
+    &--telegram {
       @include hoverTransition(color, $color-tertiary);
     }
 
     &--telegram {
-      @include hoverTransition(color, $color-tertiary);
       padding-bottom: 4rem;
+
+      @media (max-width: $screen-md) {
+        padding-bottom: 0;
+      }
     }
   }
 
   &__brief {
-    background-color: $color-primary;
-    display: flex;
     align-items: start;
-    padding: $padding;
-    max-width: 16rem;
+    background-color: $color-primary;
     color: $color-secondary;
-    font-size: $font-size-big;
-    font-weight: $font-weight-bold;
-
+    max-width: 16rem;
+    padding: $padding;
+    @include boldText($font-size-big);
     @include transition();
 
     &:hover {
       background-color: transparent;
       color: $color-primary;
+    }
+
+    @media (max-width: $screen-md) {
+      margin-top: 2rem;
+      max-width: none;
+      text-align: center;
     }
   }
 }

@@ -5,6 +5,9 @@ import news1 from "../img/news1.png";
 import news2 from "../img/news2.png";
 import leo from "../img/leo.png";
 
+const CASE_SLIDER_WRAPPER = '.case-slider__wrapper';
+const NEWS_SLIDER_ITEMS = '.news-slider__items';
+
 const slideData = [
   {
     title: "Например,",
@@ -67,10 +70,10 @@ const newsSlideData = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-  initSlider('.case-slider__wrapper', slideData, createCaseSlide, navigateCaseSlide);
+  initSlider(CASE_SLIDER_WRAPPER, slideData, createCaseSlide, navigateCaseSlide);
 
   const sortedNews = newsSlideData.sort((a, b) => b.views - a.views);
-  initSlider('.news-slider__items', sortedNews, createNewsSlide, navigateNewsSlide);
+  initSlider(NEWS_SLIDER_ITEMS, sortedNews, createNewsSlide, navigateNewsSlide);
 });
 
 function initSlider(containerSelector, data, slideCreator, navigator) {
@@ -99,8 +102,11 @@ function createElement(tag, classNames = [], attributes = {}) {
 }
 
 function createCaseSlide(slide) {
-  const sliderWrapper = document.querySelector('.case-slider__wrapper');
-  if (!sliderWrapper) return;
+  const sliderWrapper = document.querySelector(CASE_SLIDER_WRAPPER);
+  if (!sliderWrapper) {
+    console.error(`Element with selector ${CASE_SLIDER_WRAPPER} not found.`);
+    return;
+  }
 
   const slideElement = createElement('div', ['slide'], { style: `background-color: ${slide.backgroundColor}` });
   const contentElement = createElement('div', ['slide__content']);
@@ -116,7 +122,7 @@ function createCaseSlide(slide) {
 }
 
 function navigateCaseSlide(index) {
-  const newIndex = generalNavigate(index, '.case-slider__wrapper', '.slide', slideData.length);
+  const newIndex = generalNavigate(index, CASE_SLIDER_WRAPPER, '.slide', slideData.length);
   updateCaseSlideText(newIndex);
   return newIndex;
 }
@@ -214,7 +220,7 @@ function fadeIn(element) {
 
 
 function createNewsSlide(slide) {
-  const itemsContainer = document.querySelector('.news-slider__items');
+  const itemsContainer = document.querySelector(NEWS_SLIDER_ITEMS);
 
   const slideDiv = createElement('div', ['news-slider__item']);
 
@@ -251,20 +257,22 @@ function createNewsSlide(slide) {
 }
 
 function navigateNewsSlide(index) {
-  return generalNavigate(index, '.news-slider__items', '.news-slider__item', newsSlideData.length / 2, 50);
+  return generalNavigate(index, NEWS_SLIDER_ITEMS, '.news-slider__item', newsSlideData.length / 2, 50);
 }
 
 function generalNavigate(index, wrapperSelector, itemSelector, maxSlides, percentage = 100) {
   const sliderWrapper = document.querySelector(wrapperSelector);
-  const slides = document.querySelectorAll(itemSelector);
+  if (!sliderWrapper) {
+    console.error(`Element with selector ${wrapperSelector} not found.`);
+    return index;
+  }
 
-  if (index >= maxSlides) index = 0;
-  if (index < 0) index = maxSlides - 1;
+  index = ((index % maxSlides) + maxSlides) % maxSlides;
 
   const offset = -index * percentage;
   sliderWrapper.style.transform = `translateX(${offset}%)`;
 
-  if (wrapperSelector === '.case-slider__wrapper') {
+  if (wrapperSelector === CASE_SLIDER_WRAPPER) {
     updateCaseSlideText(index);
   }
 

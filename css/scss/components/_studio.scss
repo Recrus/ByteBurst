@@ -6,13 +6,21 @@
   padding: $padding;
   margin-bottom: $block-margin-bottom;
 
+  @media (max-width: $screen-sm) {
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
   &__cta-links {
     margin-bottom: 2rem;
 
+    @media (max-width: $screen-sm) {
+      margin-bottom: 1rem;
+    }
+
     a {
       color: $color-tertiary;
-      font-size: $font-size-medium;
-      font-weight: $font-weight-bold;
+      @include boldText($font-size-medium);
       @include hoverTransition();
 
       &:first-child {
@@ -30,6 +38,14 @@
 
     article {
       min-height: 36rem;
+
+      @media (max-width: $screen-sm) {
+        min-height: 20rem;
+      }
+    }
+
+    @media (max-width: $screen-sm) {
+      flex-direction: column;
     }
   }
 }
@@ -41,15 +57,17 @@
 
   &__title {
     max-width: 22rem;
-    font-size: $font-size-big;
-    font-weight: $font-weight-bold;
+    @include boldText($font-size-big);
     margin-bottom: 1rem;
+
+    @media (max-width: $screen-sm) {
+      @include boldText($font-size-medium);
+    }
   }
 
   &__link {
     color: $color-primary;
-    font-size: $font-size-small;;
-    font-weight: $font-weight-bold;
+    @include boldText($font-size-small);
     @include hoverTransition(all, $color-tertiary);
   }
 
@@ -78,17 +96,29 @@
   @include flexColumnSpaceB;
   min-width: 50%;
 
+  @media (max-width: $screen-sm) {
+    padding: 2rem 0;
+  }
+
   &--vertical-line {
     border-left: 1px solid $color-tertiary;
+
+    @media (max-width: $screen-sm) {
+      border-top: 1px solid $color-tertiary;
+      border-left: none;
+    }
   }
 
   &__list {
-    font-size: $font-size-medium;
-    font-weight: $font-weight-bold;
+    @include boldText($font-size-medium);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 1rem;
+
+    @media (max-width: $screen-sm) {
+      @include boldText($font-size-small);
+    }
   }
 
   &__item {
@@ -101,14 +131,17 @@
 
   &__description {
     max-width: 30rem;
-    font-size: $font-size-big;
-    font-weight: $font-weight-bold;
+    @include boldText($font-size-big);
+
+    @media (max-width: $screen-md) {
+      @include boldText($font-size-medium);
+      margin-top: 2rem;
+    }
   }
 
   &__cta-link {
     color: $color-primary;
-    font-size: $font-size-small;;
-    font-weight: $font-weight-bold;
+    @include boldText($font-size-small);
     @include hoverTransition(all, $color-tertiary);
   }
 }

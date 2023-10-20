@@ -26,15 +26,39 @@
     justify-content: space-around;
     padding: 6rem;
 
+    @media (max-width: $screen-md) {
+      padding: 2rem;
+    }
+
+    @media (max-width: $screen-sm) {
+      margin-top: 4rem;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 2rem 12rem 2rem;
+    }
+
     h2 {
       max-width: 24rem;
-      font-size: $font-size-big;
-      font-weight: $font-weight-bold;
+      @include boldText($font-size-big);
+
+      @media (max-width: $screen-md) {
+        @include boldText($font-size-medium);
+      }
 
       span {
         font-size: $font-size-big;
         text-decoration: underline;
         line-height: 6rem;
+
+        @media (max-width: $screen-md) {
+          @include boldText($font-size-medium);
+        }
+      }
+    }
+
+    img {
+      @media (max-width: $screen-md) {
+        width: 70%;
       }
     }
   }
@@ -53,6 +77,10 @@
   height: 33.33%;
   filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
 
+  @media (max-width: $screen-sm) {
+    height: 45%;
+  }
+
   &__client {
     display: flex;
     justify-content: space-around;
@@ -60,11 +88,24 @@
     padding: $padding;
     opacity: 1;
     @include transition(opacity, 300ms ease-out);
+
+    @media (max-width: $screen-sm) {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
   }
 
   &__client-name {
-    font-size: $font-size-medium;
-    font-weight: $font-weight-bold;
+    @include boldText($font-size-medium);
+
+    @media (max-width: $screen-md) {
+      @include boldText(16px);
+    }
+
+    @media (max-width: $screen-sm) {
+      @include boldText($font-size-small);
+    }
   }
 
   &__client-link {
@@ -77,12 +118,23 @@
     margin: 0 auto;
     text-align: center;
     @include hoverTransition();
+
+    @media (max-width: $screen-lg) {
+      @include boldText($font-size-huge);
+    }
+
+    @media (max-width: $screen-md) {
+      @include boldText($font-size-big);
+    }
+
+    @media (max-width: $screen-sm) {
+      @include boldText($font-size-small);
+    }
   }
 
   &__other-works {
     color: $color-primary;
-    font-size: $font-size-small;;
-    font-weight: $font-weight-bold;
+    @include boldText($font-size-small);
     @include hoverTransition(all, $color-tertiary);
   }
 
@@ -95,6 +147,11 @@
     padding: 0 2rem;
     opacity: 1;
     @include transition(opacity, 300ms ease-out);
+
+    @media (max-width: $screen-sm) {
+      flex-direction: column;
+      padding: 0;
+    }
   }
 
   &__stats {
@@ -102,8 +159,21 @@
     padding: 2rem 0;
     min-width: 50%;
 
+    @media (max-width: $screen-md) {
+      padding: 2rem;
+    }
+
+    @media (max-width: $screen-sm) {
+      padding: 1.5rem;
+    }
+
     &:first-child {
       border-right: 1px solid $color-tertiary;
+
+      @media (max-width: $screen-sm) {
+        border-bottom: 1px solid $color-tertiary;
+        border-right: none;
+      }
     }
   }
 
@@ -112,11 +182,18 @@
     font-weight: $font-weight-medium;
     text-transform: uppercase;
     margin-right: 2rem;
+
+    @media (max-width: $screen-md) {
+      @include boldText(28px);
+    }
+
+    @media (max-width: $screen-sm) {
+      @include boldText($font-size-small);
+    }
   }
 
   &__stats-description {
-    font-size: $font-size-small;;
-    font-weight: $font-weight-bold;
+    @include boldText($font-size-small);
     max-width: 14rem;
   }
 }

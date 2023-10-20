@@ -10,16 +10,30 @@
   @include flexColumnSpaceB;
 
   @include container;
+
+  @media (max-width: $screen-sm) {
+    max-height: 600px;
+  }
 }
 
 // Navigation Styles
 .nav {
   &__top {
     padding: $padding;
+
+    @media (max-width: $screen-sm) {
+      flex-direction: column;
+      align-items: start;
+      gap: $items-gap;
+    }
   }
 
   &__top, &__menu, &__contact, &__logo {
     @include flexSpaceB;
+
+    @media (max-width: $screen-xsm) {
+      justify-content: initial;
+    }
   }
 
   &__link {
@@ -54,7 +68,10 @@
 .header__slogan {
   padding: $padding;
   max-width: 600px;
-  font-size: $font-size-huge;
-  font-weight: $font-weight-bold;
+  @include boldText($font-size-huge);
+
+  @media (max-width: $screen-xsm) {
+    @include boldText($font-size-big);
+  }
 }
 
