@@ -1,0 +1,127 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+//Cases styles
+.case-slider {
+  overflow: hidden;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  margin-bottom: 4rem;
+  padding-bottom: 5%;
+}
+
+.case-slider__wrapper {
+  display: flex;
+  @include transition(transform, 500ms ease);
+}
+
+.slide {
+  min-width: 100%;
+
+  &__content {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-content: space-around;
+    padding: 6rem;
+
+    h2 {
+      max-width: 24rem;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: $font-weight-bold;
+      line-height: 32px;
+
+      span {
+        font-size: 32px;
+        line-height: 36px;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.slide-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1400px;
+  background-color: $color-secondary;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 33.33%;
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+
+  &__client {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    padding: 2rem;
+    opacity: 1;
+    @include transition(opacity, 300ms ease-out);
+  }
+
+  &__client-name {
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+    line-height: 28px;
+  }
+
+  &__client-link {
+    color: $color-tertiary;
+    font-size: 82px;
+    font-weight: $font-weight-bold;
+    letter-spacing: 6.613px;
+    text-transform: uppercase;
+    min-width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    @include hoverTransition();
+  }
+
+  &__other-works {
+    color: $color-primary;
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    line-height: 36px;
+    @include hoverTransition(all, $color-tertiary);
+  }
+
+  &__divider {
+    @include divider(2px, $divider-color-primary);
+  }
+
+  &__stats-wrapper {
+    @include flexCenter;
+    padding: 0 2rem;
+    opacity: 1;
+    @include transition(opacity, 300ms ease-out);
+  }
+
+  &__stats {
+    @include flexCenter;
+    padding: 2rem 0;
+    min-width: 50%;
+
+    &:first-child {
+      border-right: 1px solid $color-tertiary;
+    }
+  }
+
+  &__stats-value {
+    font-size: 42px;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+    margin-right: 2rem;
+  }
+
+  &__stats-description {
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    line-height: 20px;
+    max-width: 14rem;
+  }
+}

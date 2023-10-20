@@ -1,0 +1,47 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  color: #000;
+  font-size: 16px;
+  font-weight: $font-weight-bold;
+  @include container;
+
+  &__brand, &__socials, &__contact {
+    display: flex;
+    align-items: center;
+    gap: $footer-gap;
+  }
+
+  &__logo {
+    width: 2rem;
+  }
+
+  &__address {
+    max-width: 8rem;
+  }
+
+  &__socials-list {
+    display: flex;
+    gap: $footer-gap;
+  }
+
+  &__socials-item, &__phone {
+    border-left: $footer-border-style;
+    padding-left: $footer-gap;
+    color: $color-tertiary;
+
+    &:first-child {
+      border: none;
+    }
+  }
+
+  &__socials-link, &__email, &__phone {
+    color: $color-tertiary;
+    @include hoverTransition();
+  }
+}

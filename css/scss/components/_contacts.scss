@@ -1,0 +1,70 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+.contact-block {
+  margin-bottom: 4rem;
+
+  &__divider {
+    @include divider(4px, $divider-color-tertiary);
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    height: 24rem;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    min-width: 50%;
+    padding: 2rem 1rem 2rem 0;
+    border-right: 1px solid $color-primary;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+    max-width: 20rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__link {
+    color: $color-primary;
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+
+    &--email {
+      @include hoverTransition(color, $color-tertiary);
+    }
+
+    &--telegram {
+      @include hoverTransition(color, $color-tertiary);
+      padding-bottom: 4rem;
+    }
+  }
+
+  &__brief {
+    background-color: $color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    max-width: 16rem;
+    color: $color-secondary;
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+
+    @include transition();
+
+    &:hover {
+      background-color: transparent;
+      color: $color-primary;
+    }
+  }
+}

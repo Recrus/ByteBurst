@@ -1,0 +1,62 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+// Header Styles
+.header__wrapper {
+  height: 100vh;
+  max-height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include container;
+}
+
+.nav {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+
+  &__menu,
+  &__contact,
+  &__logo {
+    display: flex;
+  }
+
+  &__link {
+    color: $color-secondary;
+    @include hoverTransition;
+
+    &--vertical-line {
+      border-left: 1px solid $color-secondary;
+      padding-left: 1rem;
+      margin-left: 1rem;
+    }
+  }
+
+  &__logo {
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+
+    &-img {
+      width: 40px;
+      height: 40px;
+    }
+
+    &-text {}
+  }
+
+  &__divider {
+    @include divider(4px, $divider-color-secondary);
+  }
+}
+
+.header__slogan {
+  padding: 2rem;
+  max-width: 600px;
+  font-size: 42px;
+  font-weight: $font-weight-bold;
+  line-height: 48px;
+}

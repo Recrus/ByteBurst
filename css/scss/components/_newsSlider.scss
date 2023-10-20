@@ -1,0 +1,123 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+//News styles
+.news-slider {
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  background-color: #000;
+  color: $color-secondary;
+  margin-bottom: 4rem;
+
+  &__wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+    line-height: 40px;
+    min-width: 50%;
+    max-width: 20rem;
+  }
+
+  &__viewport {
+    overflow: hidden;
+    padding: 2rem 0;
+    width: 100%;
+  }
+
+  &__items {
+    display: flex;
+    gap: 2rem;
+    width: 200%;
+    @include transition(transform, 500ms ease);
+  }
+
+  &__item {
+    width: 50%;
+    display: flex;
+    gap: 4rem;
+    box-sizing: border-box;
+
+    &-image {
+      min-width: 50%;
+      background-color: #fff;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: $font-weight-bold;
+      line-height: 28px;
+      padding: 1rem 0;
+    }
+
+    &-link {
+      color: $color-secondary;
+      font-size: 14px;
+      font-weight: $font-weight-bold;
+      line-height: 20px;
+      @include hoverTransition();
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &-avatar {
+      border-radius: 100%;
+      background-color: #fff;
+      height: 50px;
+      width: 50px;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    &-name {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: $font-weight-bold;
+    }
+
+    &-views {
+      color: $color-primary;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      img {
+        height: 1rem;
+      }
+    }
+  }
+
+  &__show-all {
+    width: fit-content;
+    color: $color-secondary;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: $font-weight-bold;
+    line-height: 36px;
+    @include hoverTransition();
+  }
+}

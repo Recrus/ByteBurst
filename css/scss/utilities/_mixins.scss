@@ -1,0 +1,31 @@
+@import "../utilities/variables";
+
+// Mixins
+@mixin container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin divider($height: 4px, $bgc: $divider-color-primary) {
+  height: $height;
+  border: none;
+  background-color: $bgc;
+}
+
+@mixin transition($property: all, $speed: $transition-ease) {
+  transition: $property $speed;
+}
+
+@mixin hoverTransition($property: all, $color: $color-primary) {
+  transition: $property $transition-ease;
+
+  &:hover {
+    color: $color;
+  }
+}

@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/scss/main.css" />
-    <link rel="stylesheet" href="css/scss/nullable.css" />
 
 <!--    <meta name="theme-color" content="#fafafa" />-->
 <!--    todo replace-->
@@ -123,9 +122,34 @@
 
     </main>
 
-    <footer>
-      test
+    <footer class="footer">
+      <div class="footer__brand">
+        <img class="footer__logo" src="./img/logoB.svg" alt="Company Logo">
+        <p class="footer__years">&copy; 2012-2023</p>
+      </div>
+      <p class="footer__address">
+        Москва, Авиамоторная 25
+      </p>
+      <div class="footer__socials">
+        <p class="footer__socials-title">Мы в соцсетях:</p>
+        <ul class="footer__socials-list">
+          <li class="footer__socials-item">
+            <a href="#" class="footer__socials-link footer__socials-link--vk">vk</a>
+          </li>
+          <li class="footer__socials-item">
+            <a href="#" class="footer__socials-link footer__socials-link--fb">fb</a>
+          </li>
+          <li class="footer__socials-item">
+            <a href="#" class="footer__socials-link footer__socials-link--in">in</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <p class="footer__email">hello@bb.ru</p>
+        <a href="tel:+76031112298" class="footer__phone">+7(603) 111-22-98</a>
+      </div>
     </footer>
+
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
