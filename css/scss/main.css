@@ -456,4 +456,69 @@ main {
   transform: translateX(0.5rem);
 }
 
+.contact-block {
+  margin-bottom: 4rem;
+}
+.contact-block__divider {
+  height: 4px;
+  border: none;
+  background-color: #002EFF;
+}
+.contact-block__content {
+  display: flex;
+  justify-content: space-between;
+  height: 24rem;
+}
+.contact-block__description {
+  display: flex;
+  justify-content: space-between;
+  min-width: 50%;
+  padding: 2rem 1rem 2rem 0;
+  border-right: 1px solid #002EFF;
+}
+.contact-block__title {
+  font-size: 32px;
+  font-weight: 600;
+  max-width: 20rem;
+}
+.contact-block__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contact-block__link {
+  color: #002EFF;
+  font-size: 20px;
+  font-weight: 600;
+}
+.contact-block__link--email {
+  transition: color 250ms ease-in-out;
+}
+.contact-block__link--email:hover {
+  color: #000000;
+}
+.contact-block__link--telegram {
+  transition: color 250ms ease-in-out;
+  padding-bottom: 4rem;
+}
+.contact-block__link--telegram:hover {
+  color: #000000;
+}
+.contact-block__brief {
+  background-color: #002EFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  max-width: 16rem;
+  color: #FFFFFF;
+  font-size: 32px;
+  font-weight: 600;
+  transition: all 250ms ease-in-out;
+}
+.contact-block__brief:hover {
+  background-color: transparent;
+  color: #002EFF;
+}
+
 /*# sourceMappingURL=main.css.map */
